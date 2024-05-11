@@ -109,7 +109,6 @@ void pool_shutdown(void)
     pthread_mutex_destroy(&mutex);
     sem_destroy(&sem);
     for(int i = 0; i < NUMBER_OF_THREADS; i++) {
-        pthread_cancel(bee[i]);
         pthread_join(bee[i], NULL);
     }
 }
